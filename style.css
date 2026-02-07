@@ -30,7 +30,7 @@ a {
   width: 200px;
   text-decoration: none;
   color: white;
-  background: rgba(0, 119, 204, 0.7); /* leicht transparent */
+  background: rgba(0, 119, 204, 0.7);
   border-radius: 6px;
   transition: 0.3s;
 }
