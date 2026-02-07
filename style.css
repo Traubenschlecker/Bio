@@ -98,8 +98,24 @@ body::before {
 
 /* Titel bleibt sichtbar + Glow */
 .bio-frame h1 {
+  position: relative;
+  top: -50px;
+  left: 30px;
   margin-bottom: 150px;
   font-size: 2.5rem;
+  color: #ffffff;
+  text-shadow: 
+    0 0 5px rgba(255,255,255,0.7),
+    0 0 10px rgba(255,255,255,0.5),
+    0 0 20px rgba(255,255,255,0.3);
+}
+
+.bio-frame h2 {
+  position: relative;
+  top: -140px;
+  left: -100px;
+  margin-bottom: 20px;
+  font-size: 1rem;
   color: #ffffff;
   text-shadow: 
     0 0 5px rgba(255,255,255,0.7),
@@ -111,8 +127,8 @@ body::before {
 /* Nur Discord-Logo */
 .discord {
   position: absolute;   /* sehr wichtig! sonst top/left ignoriert */
-  top: 10px;
-  left: 185px;
+  top: 30px;
+  left: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,14 +138,16 @@ body::before {
 
 
 .discord-logo {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
   border-radius: 8px;
 }
 
 /* Plattform-Buttons */
 .links {
+  position: relative;
+  top: 90px;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -159,6 +177,43 @@ body::before {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* Glow */
 }
 
+
+
+
+
+/* Plattform-Buttons  222222 */
+.kernal {
+  position: relative;    
+  top: -265px;
+  left: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.kernal a.circle {
+  width: 50px;
+  height: 50px;
+  background: #333;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.kernal a.circle img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+/* Hover: Glow + Vergrößern */
+.kernal a.circle:hover {
+  background: #555;
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* Glow */
+}
 
 
 
