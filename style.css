@@ -2,21 +2,5 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   margin-top: 50px;
-  background-color: #f0f0f0;
-}
-
-a {
-  display: block;
-  margin: 10px auto;
-  padding: 12px;
-  width: 200px;
-  text-decoration: none;
-  color: white;
-  background: #0077cc;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-
-a:hover {
-  background: #005fa3;
+  background: linear-gradient(to bottom right, #6a11cb, #2575fc);
 }
