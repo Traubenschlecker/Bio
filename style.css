@@ -1,17 +1,23 @@
-/* Video als Hintergrund */
-#bg-video {
+/* Container für das Video */
+.video-container {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;  /* sorgt dafür, dass Video Bildschirm füllt */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   z-index: -1;
+}
+
+#bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* füllt Bildschirm ohne weiße Balken */
 }
 
 /* Inhalt über dem Video */
 .content {
-  position: fixed;  /* damit immer mittig */
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -29,7 +35,7 @@ a {
   width: 200px;
   text-decoration: none;
   color: white;
-  background: rgba(0, 119, 204, 0.7); /* leicht transparent */
+  background: rgba(0, 119, 204, 0.7);
   border-radius: 6px;
   transition: 0.3s;
 }
