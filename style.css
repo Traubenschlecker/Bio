@@ -1,46 +1,182 @@
-/* Video als Hintergrund */
-#bg-video {
+/* Fullscreen Overlay – komplett schwarz */
+#startOverlay {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  width: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
+  background: #000; /* komplett schwarz */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; /* über allem */
 }
 
-/* Inhalt über dem Video */
-.content {
+/* Inhalt in der Mitte */
+.start-content h1 {
+  color: #fff;
+  font-size: 3rem;
+  text-shadow: 
+    0 0 10px rgba(255,255,255,0.7),
+    0 0 20px rgba(255,255,255,0.5),
+    0 0 30px rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: transform 0.3s, text-shadow 0.3s;
+}
+
+.start-content h1:hover {
+  transform: scale(1.1);
+  text-shadow: 
+    0 0 15px rgba(255,255,255,0.9),
+    0 0 25px rgba(255,255,255,0.7),
+    0 0 35px rgba(255,255,255,0.5);
+}
+
+
+
+/* Hintergrundbild mit Blur */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   position: relative;
-  z-index: 1;
+  background: #111;
+  cursor: none;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('background.jpg') no-repeat center center;
+  background-size: cover;
+  filter: blur(8px);
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+/* Container für 3D-Perspektive */
+.frame-container {
+  perspective: 1000px;
+}
+
+/* Bio-Frame */
+.bio-frame {
+  position: relative;
+  background: rgba(50, 50, 50, 0.6);
+  backdrop-filter: blur(5px);
+  padding: 60px 40px;
+  border-radius: 20px;
   text-align: center;
-  margin-top: 50px;
-  color: white;
-  font-family: Arial, sans-serif;
+  min-width: 350px;
+  max-width: 500px;
+  z-index: 1;
+  color: #fff;
+  transition: transform 0.1s ease;
+  transform-style: preserve-3d;
 }
 
-/* Buttons */
-a {
-  display: block;
-  margin: 10px auto;
-  padding: 12px;
-  width: 200px;
-  text-decoration: none;
-  color: white;
-  background: rgba(0, 119, 204, 0.7);
-  border-radius: 6px;
-  transition: 0.3s;
-}
-
-a:hover {
-  background: rgba(0, 95, 163, 0.8);
-}
-
-/* Überschrift */
-h1 {
+/* Titel bleibt sichtbar + Glow */
+.bio-frame h1 {
   margin-bottom: 30px;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 
+    0 0 5px rgba(255,255,255,0.7),
+    0 0 10px rgba(255,255,255,0.5),
+    0 0 20px rgba(255,255,255,0.3);
+}
+
+
+/* Nur Discord-Logo */
+.discord {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.discord-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Plattform-Buttons */
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.links a.circle {
+  width: 70px;
+  height: 70px;
+  background: #333;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.links a.circle img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+/* Hover: Glow + Vergrößern */
+.links a.circle:hover {
+  background: #555;
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* Glow */
+}
+
+/* Mobilfreundlich */
+@media (max-width: 500px) {
+  .bio-frame {
+    padding: 40px 25px;
+  }
+
+  .bio-frame h1 {
+    font-size: 2rem;
+  }
+
+  .discord-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .links a.circle {
+    width: 55px;
+    height: 55px;
+  }
+
+  .links a.circle img {
+    width: 25px;
+    height: 25px;
+  }
 }
