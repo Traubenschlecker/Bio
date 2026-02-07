@@ -1,4 +1,4 @@
-/* Container für YouTube Video */
+/* Video als Hintergrund */
 .video-background {
   position: fixed;
   top: 0;
@@ -12,7 +12,8 @@
 .video-background iframe {
   width: 100vw;
   height: 100vh;
-  pointer-events: none; /* klickbar nur der Inhalt */
+  pointer-events: none; /* verhindert, dass das Video angeklickt wird */
+  object-fit: cover;
 }
 
 /* Inhalt über dem Video */
@@ -25,6 +26,7 @@
   font-family: Arial, sans-serif;
 }
 
+/* Buttons */
 a {
   display: block;
   margin: 10px auto;
@@ -32,7 +34,7 @@ a {
   width: 200px;
   text-decoration: none;
   color: white;
-  background: rgba(0, 119, 204, 0.7);
+  background: rgba(0, 119, 204, 0.7); /* leicht transparent */
   border-radius: 6px;
   transition: 0.3s;
 }
@@ -40,45 +42,9 @@ a {
 a:hover {
   background: rgba(0, 95, 163, 0.8);
 }
-/* Container für YouTube Video */
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-}
 
-.video-background iframe {
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none; /* klickbar nur der Inhalt */
-}
-
-/* Inhalt über dem Video */
-.content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  margin-top: 50px;
-  color: white;
-  font-family: Arial, sans-serif;
-}
-
-a {
-  display: block;
-  margin: 10px auto;
-  padding: 12px;
-  width: 200px;
-  text-decoration: none;
-  color: white;
-  background: rgba(0, 119, 204, 0.7);
-  border-radius: 6px;
-  transition: 0.3s;
-}
-
-a:hover {
-  background: rgba(0, 95, 163, 0.8);
+/* Überschrift */
+h1 {
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
