@@ -1,22 +1,15 @@
 /* Video als Hintergrund */
-.video-background {
+#bg-video {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;  /* gesamte Breite */
-  height: 100vh; /* gesamte Höhe */
-  overflow: hidden;
-  z-index: -1;
-}
-
-.video-background iframe {
-  position: absolute;
   top: 50%;
   left: 50%;
-  width: 177.77vh; /* 16:9 Verhältnis -> Höhe * 16/9 */
-  height: 100vh;
+  width: auto;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
   transform: translate(-50%, -50%);
-  pointer-events: none;
+  object-fit: cover;
 }
 
 /* Inhalt über dem Video */
@@ -51,4 +44,5 @@ h1 {
   margin-bottom: 30px;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
+
 
